@@ -8,6 +8,14 @@
 
 ## Setup
 
+The optional dependency excludes `litellm==1.107.0`, identified as compromised in the
+[October 21, 2026 advisory](https://docs.litellm.ai/blog/security-incident-oct-21-2026).
+This fork's lock retains `1.67.4.post1` and all existing artifact hashes. This is
+dependency containment, not verification of any production deployment. Validate
+the optional extra in a fresh isolated environment; do not start Python or pip in
+an environment that may have installed the affected release. Secure bootstrap
+requires [uv >=0.13.4 and pip >=26.2.2](https://discuss.python.org/t/information-for-python-users-regarding-emudhra-emsign-ca-certificate-security-incident/109576).
+
 You'll need to ensure `litellm` is available. You can do this by installing the optional `litellm` dependency group:
 
 ```bash
